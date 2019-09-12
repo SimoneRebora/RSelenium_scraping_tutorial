@@ -62,7 +62,7 @@ remDr$open() # open web browser
     ## [1] TRUE
     ## 
     ## $webdriver.remote.sessionid
-    ## [1] "279fcc41-bc4e-4ce4-926e-ae62effc9c65"
+    ## [1] "cc9ccbcb-49dd-4747-848b-cc96710ae096"
     ## 
     ## $webStorageEnabled
     ## [1] TRUE
@@ -83,7 +83,7 @@ remDr$open() # open web browser
     ## [1] TRUE
     ## 
     ## $id
-    ## [1] "279fcc41-bc4e-4ce4-926e-ae62effc9c65"
+    ## [1] "cc9ccbcb-49dd-4747-848b-cc96710ae096"
 
 ``` r
 url = "https://www.wattpad.com/20044727-pride-and-prejudice-1813-chapter-i"
@@ -291,12 +291,12 @@ button_clicked <- click_button(CommentsButton[[WP_comment]])
 
     ## 
     ## Selenium message:Element is not clickable at point (638.5, 15.5). Other element would receive the click: <form class="form-horizontal dropdown" role="form" name="search" action="/search/" autocomplete="off"></form>
-    ## Command duration or timeout: 70 milliseconds
+    ## Command duration or timeout: 67 milliseconds
     ## Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
     ## System info: host: 'b5d224a62e74', ip: '172.17.0.2', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-62-generic', java.version: '1.8.0_91'
     ## Driver info: org.openqa.selenium.firefox.FirefoxDriver
     ## Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-    ## Session ID: 6ea102b3-17e9-4e04-9427-821b4eb922de
+    ## Session ID: c9beef3b-da81-492b-9052-3ea27a5f2760
 
     ## Yet another error message in catch_button.
 
@@ -322,25 +322,6 @@ if(class(button_clicked) == "character"){
         ## if it didn't work, well, we might have to restart everything :(
     }
 }
-```
-
-    ## 
-    ## Selenium message:Element is not clickable at point (638.5, 38.5). Other element would receive the click: <form class="form-horizontal dropdown" role="form" name="search" action="/search/" autocomplete="off"></form>
-    ## Command duration or timeout: 66 milliseconds
-    ## Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
-    ## System info: host: 'b5d224a62e74', ip: '172.17.0.2', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-62-generic', java.version: '1.8.0_91'
-    ## Driver info: org.openqa.selenium.firefox.FirefoxDriver
-    ## Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-    ## Session ID: 6ea102b3-17e9-4e04-9427-821b4eb922de
-
-    ## Yet another error message in catch_button.
-
-    ## Here is the actual R error message:
-
-    ## 
-    ## HOWEVER don't worry, we can still go on!!!
-
-``` r
 ##Check screenshot to verify that the pop-up with comments was opened
 #remDr$screenshot(display = TRUE)
 
