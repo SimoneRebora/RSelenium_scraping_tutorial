@@ -7,12 +7,12 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This is a basic tutorial that introduces you to scraping dynamic web pages. It explains how I collected data for the scripts in the [wattpad_analysis](https://github.com/SimoneRebora/Wattpad_analysis) repository.  
-Remember that **web scraping is a very delicate procedure** and should be applied by complying to a series of rules (or best practices). So **read carefully all my suggestions.**  
+This is a basic tutorial that introduces you to scraping dynamic web pages. It explains how I collected data for the scripts in the [wattpad_analysis](https://github.com/SimoneRebora/Wattpad_analysis) repository.<br/>
+Remember that **web scraping is a very delicate procedure** and should be applied by complying to a series of rules (or best practices). So **read carefully all my suggestions.**
   
-The following code will work on a virtual browser. So, before running it, you will have to [install Docker](https://docs.docker.com/install/) on your machine.  
-Once installed it, please start the following container:  
-<code>$ sudo docker run -d -p 4445:4444 selenium/standalone-firefox:2.53.0</code>  
+The following code will work on a virtual browser. So, before running it, you will have to [install Docker](https://docs.docker.com/install/) on your machine.<br/>
+Once installed it, please start the following container:<br/>
+<code>$ sudo docker run -d -p 4445:4444 selenium/standalone-firefox:2.53.0</code><br/>
 *(note that this is not the latest version of Firefox: however, it is the one that was used and tested for the present tutorial)*
 
 ## Step 0. Upload packages
@@ -27,7 +27,7 @@ library(syuzhet)
 
 ## Step 1. Scraping preparation
 
-First, initiate the virtual browser and navigate to the selected page (in our case, the first chapter of "Pride and Prejudice" on Wattapd)  
+First, initiate the virtual browser and navigate to the selected page (in our case, the first chapter of "Pride and Prejudice" on Wattapd)<br/>
 To verify the connection, print the title of the page
 
 ```{r preparation}
@@ -112,8 +112,8 @@ cat("Chapter reads:", chapter_reads,
 
 ## Step 4. Paragraphs extraction (text)
 
-Now we can move to the text and start its extraction.  
-First, the commented paragraphs.  
+Now we can move to the text and start its extraction.<br/>
+First, the commented paragraphs.<br/>
 *(note: as sometimes only a part of the chapter is shown, we have to move to the page bottom, so that also the following part can appear)*
 
 ```{r}
@@ -151,8 +151,8 @@ head(chapter_paragraphs_df)
 
 ## Step 5. Comments extraction (just the first paragraph)
 
-Now the most complex (and important) part of the scraping starts!  
-Let's extract the comments to the first paragraph ("It is a truth universally acknowledged...")  
+Now the most complex (and important) part of the scraping starts!<br/>
+Let's extract the comments to the first paragraph ("It is a truth universally acknowledged...")<br/>
 As you might have noticed, they are 3,300, so for a demonstration we'll extract only a part of them (one hundred)
 
 ```{r}
@@ -249,7 +249,7 @@ barplot(t(full_emotions)[,1], cex.names=0.8)
 
 ## Further steps and important notes
 
-Now everything is ready to start crawling the Wattapad website!  
+Now everything is ready to start crawling the Wattapad website!<br/>
 However, remember that:  
 - scraping can become ineffective (and even dangerous) if you don't **add pauses between each operation!** (always use the *Sys.sleep* function to make the server breath a bit between your requests)  
 - please **inform Wattpad directly,** before starting any scraping activity on their website (see their [terms of use](https://policies.wattpad.com/terms))  

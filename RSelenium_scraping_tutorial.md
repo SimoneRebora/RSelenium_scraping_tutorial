@@ -1,13 +1,9 @@
 RSelenium Scraping Tutorial
 ================
 
-This is a basic tutorial that introduces you to scraping dynamic web pages. It explains how I collected data for the scripts in the [wattpad\_analysis](https://github.com/SimoneRebora/Wattpad_analysis) repository.
-Remember that **web scraping is a very delicate procedure** and should be applied by complying to a series of rules (or best practices). So **read carefully all my suggestions.**
+This is a basic tutorial that introduces you to scraping dynamic web pages. It explains how I collected data for the scripts in the [wattpad\_analysis](https://github.com/SimoneRebora/Wattpad_analysis) repository.<br/> Remember that **web scraping is a very delicate procedure** and should be applied by complying to a series of rules (or best practices). So **read carefully all my suggestions.**
 
-The following code will work on a virtual browser. So, before running it, you will have to [install Docker](https://docs.docker.com/install/) on your machine.
-Once installed it, please start the following container:
-<code>$ sudo docker run -d -p 4445:4444 selenium/standalone-firefox:2.53.0</code>
-*(note that this is not the latest version of Firefox: however, it is the one that was used and tested for the present tutorial)*
+The following code will work on a virtual browser. So, before running it, you will have to [install Docker](https://docs.docker.com/install/) on your machine.<br/> Once installed it, please start the following container:<br/> <code>$ sudo docker run -d -p 4445:4444 selenium/standalone-firefox:2.53.0</code><br/> *(note that this is not the latest version of Firefox: however, it is the one that was used and tested for the present tutorial)*
 
 Step 0. Upload packages
 -----------------------
@@ -28,8 +24,7 @@ library(syuzhet)
 Step 1. Scraping preparation
 ----------------------------
 
-First, initiate the virtual browser and navigate to the selected page (in our case, the first chapter of "Pride and Prejudice" on Wattapd)
-To verify the connection, print the title of the page
+First, initiate the virtual browser and navigate to the selected page (in our case, the first chapter of "Pride and Prejudice" on Wattapd)<br/> To verify the connection, print the title of the page
 
 ``` r
 remDr <- remoteDriver(port = 4445L) # instantiate remote driver to connect to Selenium Server
@@ -62,7 +57,7 @@ remDr$open() # open web browser
     ## [1] TRUE
     ## 
     ## $webdriver.remote.sessionid
-    ## [1] "cc9ccbcb-49dd-4747-848b-cc96710ae096"
+    ## [1] "ebc2fd21-4ca2-4186-a787-1898e6adc10d"
     ## 
     ## $webStorageEnabled
     ## [1] TRUE
@@ -83,7 +78,7 @@ remDr$open() # open web browser
     ## [1] TRUE
     ## 
     ## $id
-    ## [1] "cc9ccbcb-49dd-4747-848b-cc96710ae096"
+    ## [1] "ebc2fd21-4ca2-4186-a787-1898e6adc10d"
 
 ``` r
 url = "https://www.wattpad.com/20044727-pride-and-prejudice-1813-chapter-i"
@@ -176,9 +171,7 @@ cat("Chapter reads:", chapter_reads,
 Step 4. Paragraphs extraction (text)
 ------------------------------------
 
-Now we can move to the text and start its extraction.
-First, the commented paragraphs.
-*(note: as sometimes only a part of the chapter is shown, we have to move to the page bottom, so that also the following part can appear)*
+Now we can move to the text and start its extraction.<br/> First, the commented paragraphs.<br/> *(note: as sometimes only a part of the chapter is shown, we have to move to the page bottom, so that also the following part can appear)*
 
 ``` r
 ## Move to bottom
@@ -249,9 +242,7 @@ head(chapter_paragraphs_df)
 Step 5. Comments extraction (just the first paragraph)
 ------------------------------------------------------
 
-Now the most complex (and important) part of the scraping starts!
-Let's extract the comments to the first paragraph ("It is a truth universally acknowledged...")
-As you might have noticed, they are 3,300, so for a demonstration we'll extract only a part of them (one hundred)
+Now the most complex (and important) part of the scraping starts!<br/> Let's extract the comments to the first paragraph ("It is a truth universally acknowledged...")<br/> As you might have noticed, they are 3,300, so for a demonstration we'll extract only a part of them (one hundred)
 
 ``` r
 ##find all commented paragraphs
@@ -291,12 +282,12 @@ button_clicked <- click_button(CommentsButton[[WP_comment]])
 
     ## 
     ## Selenium message:Element is not clickable at point (638.5, 15.5). Other element would receive the click: <form class="form-horizontal dropdown" role="form" name="search" action="/search/" autocomplete="off"></form>
-    ## Command duration or timeout: 67 milliseconds
+    ## Command duration or timeout: 69 milliseconds
     ## Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
     ## System info: host: 'b5d224a62e74', ip: '172.17.0.2', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-62-generic', java.version: '1.8.0_91'
     ## Driver info: org.openqa.selenium.firefox.FirefoxDriver
     ## Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-    ## Session ID: c9beef3b-da81-492b-9052-3ea27a5f2760
+    ## Session ID: 62316c22-bfa4-4a27-a25e-f5cfae146c3c
 
     ## Yet another error message in catch_button.
 
@@ -322,6 +313,25 @@ if(class(button_clicked) == "character"){
         ## if it didn't work, well, we might have to restart everything :(
     }
 }
+```
+
+    ## 
+    ## Selenium message:Element is not clickable at point (638.5, 47.5). Other element would receive the click: <form class="form-horizontal dropdown" role="form" name="search" action="/search/" autocomplete="off"></form>
+    ## Command duration or timeout: 63 milliseconds
+    ## Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
+    ## System info: host: 'b5d224a62e74', ip: '172.17.0.2', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-62-generic', java.version: '1.8.0_91'
+    ## Driver info: org.openqa.selenium.firefox.FirefoxDriver
+    ## Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+    ## Session ID: 62316c22-bfa4-4a27-a25e-f5cfae146c3c
+
+    ## Yet another error message in catch_button.
+
+    ## Here is the actual R error message:
+
+    ## 
+    ## HOWEVER don't worry, we can still go on!!!
+
+``` r
 ##Check screenshot to verify that the pop-up with comments was opened
 #remDr$screenshot(display = TRUE)
 
@@ -413,8 +423,7 @@ barplot(t(full_emotions)[,1], cex.names=0.8)
 Further steps and important notes
 ---------------------------------
 
-Now everything is ready to start crawling the Wattapad website!
-However, remember that:
+Now everything is ready to start crawling the Wattapad website!<br/> However, remember that:
 - scraping can become ineffective (and even dangerous) if you don't **add pauses between each operation!** (always use the *Sys.sleep* function to make the server breath a bit between your requests)
 - please **inform Wattpad directly,** before starting any scraping activity on their website (see their [terms of use](https://policies.wattpad.com/terms))
 - remember that **the data you will be dealing with is very sensitive.** So don't share it openly, protect the privacy of the users, and always comply to the current legislation (for more information on **copyright exceptions for research purposes** in Germany--the country from where I realized the scraping--see [here](https://www.clarin.eu/content/clic-copyright-exceptions-germany))
