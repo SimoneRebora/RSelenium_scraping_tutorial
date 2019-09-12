@@ -247,7 +247,7 @@ par(las=2)
 barplot(t(full_emotions)[,1], cex.names=0.8)
 ```
 
-## Further steps and important notes
+## To conclude: some important notes
 
 Now everything is ready to start crawling the Wattapad website!<br/>
 However, remember that:  

@@ -57,7 +57,7 @@ remDr$open() # open web browser
     ## [1] TRUE
     ## 
     ## $webdriver.remote.sessionid
-    ## [1] "ebc2fd21-4ca2-4186-a787-1898e6adc10d"
+    ## [1] "a03c0843-2c15-4b9b-a1d1-b9ce9237322a"
     ## 
     ## $webStorageEnabled
     ## [1] TRUE
@@ -78,7 +78,7 @@ remDr$open() # open web browser
     ## [1] TRUE
     ## 
     ## $id
-    ## [1] "ebc2fd21-4ca2-4186-a787-1898e6adc10d"
+    ## [1] "a03c0843-2c15-4b9b-a1d1-b9ce9237322a"
 
 ``` r
 url = "https://www.wattpad.com/20044727-pride-and-prejudice-1813-chapter-i"
@@ -282,12 +282,12 @@ button_clicked <- click_button(CommentsButton[[WP_comment]])
 
     ## 
     ## Selenium message:Element is not clickable at point (638.5, 15.5). Other element would receive the click: <form class="form-horizontal dropdown" role="form" name="search" action="/search/" autocomplete="off"></form>
-    ## Command duration or timeout: 69 milliseconds
+    ## Command duration or timeout: 66 milliseconds
     ## Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
     ## System info: host: 'b5d224a62e74', ip: '172.17.0.2', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-62-generic', java.version: '1.8.0_91'
     ## Driver info: org.openqa.selenium.firefox.FirefoxDriver
     ## Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-    ## Session ID: 62316c22-bfa4-4a27-a25e-f5cfae146c3c
+    ## Session ID: f53ff044-4099-44e5-8dd6-9b5a2948ef2a
 
     ## Yet another error message in catch_button.
 
@@ -316,13 +316,13 @@ if(class(button_clicked) == "character"){
 ```
 
     ## 
-    ## Selenium message:Element is not clickable at point (638.5, 47.5). Other element would receive the click: <form class="form-horizontal dropdown" role="form" name="search" action="/search/" autocomplete="off"></form>
-    ## Command duration or timeout: 63 milliseconds
+    ## Selenium message:Element is not clickable at point (638.5, 38.5). Other element would receive the click: <form class="form-horizontal dropdown" role="form" name="search" action="/search/" autocomplete="off"></form>
+    ## Command duration or timeout: 64 milliseconds
     ## Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
     ## System info: host: 'b5d224a62e74', ip: '172.17.0.2', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-62-generic', java.version: '1.8.0_91'
     ## Driver info: org.openqa.selenium.firefox.FirefoxDriver
     ## Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-    ## Session ID: 62316c22-bfa4-4a27-a25e-f5cfae146c3c
+    ## Session ID: f53ff044-4099-44e5-8dd6-9b5a2948ef2a
 
     ## Yet another error message in catch_button.
 
@@ -420,7 +420,7 @@ barplot(t(full_emotions)[,1], cex.names=0.8)
 
 ![](RSelenium_scraping_tutorial_files/figure-markdown_github/unnamed-chunk-5-1.png)
 
-Further steps and important notes
+To conclude: some important notes
 ---------------------------------
 
 Now everything is ready to start crawling the Wattapad website!<br/> However, remember that:
