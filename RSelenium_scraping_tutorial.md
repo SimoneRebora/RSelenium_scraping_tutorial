@@ -24,7 +24,7 @@ library(syuzhet)
 Step 1. Scraping preparation
 ----------------------------
 
-First, initiate the virtual browser and navigate to the selected page (in our case, the first chapter of "Pride and Prejudice" on Wattapd)<br/> To verify the connection, print the title of the page
+First, initiate the virtual browser and navigate to the selected page (in our case, [the first chapter of "Pride and Prejudice" on Wattpad](https://www.wattpad.com/20044727-pride-and-prejudice-1813-chapter-i))<br/> To verify the connection, print the title of the page
 
 ``` r
 remDr <- remoteDriver(port = 4445L) # instantiate remote driver to connect to Selenium Server
@@ -57,7 +57,7 @@ remDr$open() # open web browser
     ## [1] TRUE
     ## 
     ## $webdriver.remote.sessionid
-    ## [1] "a03c0843-2c15-4b9b-a1d1-b9ce9237322a"
+    ## [1] "dab4dc8d-390f-4d8b-90a5-65e459d6ff2e"
     ## 
     ## $webStorageEnabled
     ## [1] TRUE
@@ -78,7 +78,7 @@ remDr$open() # open web browser
     ## [1] TRUE
     ## 
     ## $id
-    ## [1] "a03c0843-2c15-4b9b-a1d1-b9ce9237322a"
+    ## [1] "dab4dc8d-390f-4d8b-90a5-65e459d6ff2e"
 
 ``` r
 url = "https://www.wattpad.com/20044727-pride-and-prejudice-1813-chapter-i"
@@ -282,12 +282,12 @@ button_clicked <- click_button(CommentsButton[[WP_comment]])
 
     ## 
     ## Selenium message:Element is not clickable at point (638.5, 15.5). Other element would receive the click: <form class="form-horizontal dropdown" role="form" name="search" action="/search/" autocomplete="off"></form>
-    ## Command duration or timeout: 66 milliseconds
+    ## Command duration or timeout: 64 milliseconds
     ## Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
     ## System info: host: 'b5d224a62e74', ip: '172.17.0.2', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-62-generic', java.version: '1.8.0_91'
     ## Driver info: org.openqa.selenium.firefox.FirefoxDriver
     ## Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-    ## Session ID: f53ff044-4099-44e5-8dd6-9b5a2948ef2a
+    ## Session ID: 449720c0-c4e4-4353-902c-c2b174695f58
 
     ## Yet another error message in catch_button.
 
@@ -316,13 +316,13 @@ if(class(button_clicked) == "character"){
 ```
 
     ## 
-    ## Selenium message:Element is not clickable at point (638.5, 38.5). Other element would receive the click: <form class="form-horizontal dropdown" role="form" name="search" action="/search/" autocomplete="off"></form>
-    ## Command duration or timeout: 64 milliseconds
+    ## Selenium message:Element is not clickable at point (638.5, 46.5). Other element would receive the click: <form class="form-horizontal dropdown" role="form" name="search" action="/search/" autocomplete="off"></form>
+    ## Command duration or timeout: 65 milliseconds
     ## Build info: version: '2.53.1', revision: 'a36b8b1', time: '2016-06-30 17:37:03'
     ## System info: host: 'b5d224a62e74', ip: '172.17.0.2', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-62-generic', java.version: '1.8.0_91'
     ## Driver info: org.openqa.selenium.firefox.FirefoxDriver
     ## Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.0.2, platform=LINUX, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-    ## Session ID: f53ff044-4099-44e5-8dd6-9b5a2948ef2a
+    ## Session ID: 449720c0-c4e4-4353-902c-c2b174695f58
 
     ## Yet another error message in catch_button.
 
@@ -427,3 +427,5 @@ Now everything is ready to start crawling the Wattapad website!<br/> However, re
 - scraping can become ineffective (and even dangerous) if you don't **add pauses between each operation!** (always use the *Sys.sleep* function to make the server breath a bit between your requests)
 - please **inform Wattpad directly,** before starting any scraping activity on their website (see their [terms of use](https://policies.wattpad.com/terms))
 - remember that **the data you will be dealing with is very sensitive.** So don't share it openly, protect the privacy of the users, and always comply to the current legislation (for more information on **copyright exceptions for research purposes** in Germany--the country from where I realized the scraping--see [here](https://www.clarin.eu/content/clic-copyright-exceptions-germany))
+
+*Note: the present script was designed specifically for [the chosen webpage](https://www.wattpad.com/20044727-pride-and-prejudice-1813-chapter-i), and tested on 12 September 2019. If the structure of the page will change, it might not be effective anymore.*

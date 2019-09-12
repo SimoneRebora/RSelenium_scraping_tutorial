@@ -27,7 +27,7 @@ library(syuzhet)
 
 ## Step 1. Scraping preparation
 
-First, initiate the virtual browser and navigate to the selected page (in our case, the first chapter of "Pride and Prejudice" on Wattapd)<br/>
+First, initiate the virtual browser and navigate to the selected page (in our case, [the first chapter of "Pride and Prejudice" on Wattpad](https://www.wattpad.com/20044727-pride-and-prejudice-1813-chapter-i))<br/>
 To verify the connection, print the title of the page
 
 ```{r preparation}
@@ -254,3 +254,5 @@ However, remember that:
 - scraping can become ineffective (and even dangerous) if you don't **add pauses between each operation!** (always use the *Sys.sleep* function to make the server breath a bit between your requests)  
 - please **inform Wattpad directly,** before starting any scraping activity on their website (see their [terms of use](https://policies.wattpad.com/terms))  
 - remember that **the data you will be dealing with is very sensitive.** So don't share it openly, protect the privacy of the users, and always comply to the current legislation (for more information on **copyright exceptions for research purposes** in Germany--the country from where I realized the scraping--see [here](https://www.clarin.eu/content/clic-copyright-exceptions-germany))
+
+*Note: the present script was designed specifically for [the chosen webpage](https://www.wattpad.com/20044727-pride-and-prejudice-1813-chapter-i), and tested on 12 September 2019. If the structure of the page will change, it might not be effective anymore.*
