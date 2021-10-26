@@ -7,6 +7,12 @@ The following code will work on a virtual browser. So, before running it, you wi
 
 Step 0. Upload packages
 -----------------------
+Note: We assume that R-base is [installed on your computer.](https://www.earthdatascience.org/courses/earth-analytics/document-your-science/setup-r-rstudio/). You may also install R editor like RStudio.
+
+Make sure the packages are installed. The most straightforward is to install tidyverse
+```r
+install.packages("tidyverse", dependencies = TRUE )
+```
 
 ``` r
 library(magrittr)
