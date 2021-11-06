@@ -18,7 +18,7 @@ install.packages("stringi", dependencies = TRUE )
 
 
 ```
-Note: You may run into error while installing, make sure you have installed libxml2 in your terminal ``` sudo apt-get install libxml2-dev ```, [httr](https://askubuntu.com/questions/1086870/r-script-returns-error-in-libraryhttr-there-is-no-package-called-httr) and other packages accordingly.
+Note: You may run into error while installing, make sure you have installed libxml2 in your terminal, on debian/ubuntu write: ``` sudo apt-get install libxml2-dev ```, [httr](https://askubuntu.com/questions/1086870/r-script-returns-error-in-libraryhttr-there-is-no-package-called-httr) and install other packages accordingly.
 
 ``` r
 library(magrittr)
