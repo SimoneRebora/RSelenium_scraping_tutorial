@@ -7,6 +7,18 @@ The following code will work on a virtual browser. So, before running it, you wi
 
 Step 0. Upload packages
 -----------------------
+Note: We assume that R-base is [installed on your computer.](https://www.earthdatascience.org/courses/earth-analytics/document-your-science/setup-r-rstudio/). You may also install R editor like RStudio.
+
+Make sure the packages are installed. The most straightforward is to install tidyverse.
+```r
+install.packages("tidyverse", dependencies = TRUE )
+install.packages("rvest", dependencies = TRUE )
+install.packages("Rselenium", dependencies = TRUE )
+install.packages("stringi", dependencies = TRUE )
+
+
+```
+Note: You may run into error while installing, make sure you have installed libxml2 in your terminal, on debian/ubuntu write: ``` sudo apt-get install libxml2-dev ```, [httr](https://askubuntu.com/questions/1086870/r-script-returns-error-in-libraryhttr-there-is-no-package-called-httr) and install other packages accordingly.
 
 ``` r
 library(magrittr)
