@@ -13,7 +13,7 @@ Make sure the packages are installed. The most straightforward is to install tid
 ```r
 install.packages("tidyverse", dependencies = TRUE )
 install.packages("rvest", dependencies = TRUE )
-install.packages("Rselenium", dependencies = TRUE )
+install.packages("RSelenium", dependencies = TRUE )
 install.packages("stringi", dependencies = TRUE )
 
 
